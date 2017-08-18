@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		A5587E4A1F46BE3B0076084A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5587E491F46BE3B0076084A /* AppDelegate.swift */; };
-		A5587E4C1F46BE3B0076084A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5587E4B1F46BE3B0076084A /* ViewController.swift */; };
 		A5587E4F1F46BE3B0076084A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5587E4D1F46BE3B0076084A /* Main.storyboard */; };
 		A5587E521F46BE3B0076084A /* CSVAssignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5587E501F46BE3B0076084A /* CSVAssignment.xcdatamodeld */; };
 		A5587E541F46BE3B0076084A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5587E531F46BE3B0076084A /* Assets.xcassets */; };
 		A5587E571F46BE3B0076084A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5587E551F46BE3B0076084A /* LaunchScreen.storyboard */; };
 		A5587E621F46BE3C0076084A /* CSVAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5587E611F46BE3C0076084A /* CSVAssignmentTests.swift */; };
 		A5587E6D1F46BE3C0076084A /* CSVAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5587E6C1F46BE3C0076084A /* CSVAssignmentUITests.swift */; };
+		A5587E7C1F46BE8F0076084A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5587E7B1F46BE8F0076084A /* DataModel.swift */; };
+		A5587E7F1F46BEC00076084A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5587E7E1F46BEC00076084A /* Constants.swift */; };
+		A5587E871F46BF7E0076084A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5587E861F46BF7E0076084A /* MainViewController.swift */; };
+		A5587E891F46C0490076084A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5587E881F46C0490076084A /* Controller.swift */; };
+		DB6CC4751D35B1D937F83C2D /* Pods_CSVAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C27DB8B6BF2BD0DDA69021 /* Pods_CSVAssignment.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F7ED70D2CFCC61FB1B71ED7 /* Pods-CSVAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSVAssignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSVAssignment/Pods-CSVAssignment.release.xcconfig"; sourceTree = "<group>"; };
 		A5587E461F46BE3B0076084A /* CSVAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSVAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5587E491F46BE3B0076084A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5587E4B1F46BE3B0076084A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A5587E4E1F46BE3B0076084A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5587E511F46BE3B0076084A /* CSVAssignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CSVAssignment.xcdatamodel; sourceTree = "<group>"; };
 		A5587E531F46BE3B0076084A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +53,12 @@
 		A5587E681F46BE3C0076084A /* CSVAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSVAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5587E6C1F46BE3C0076084A /* CSVAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVAssignmentUITests.swift; sourceTree = "<group>"; };
 		A5587E6E1F46BE3C0076084A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5587E7B1F46BE8F0076084A /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = Models/DataModel.swift; sourceTree = "<group>"; };
+		A5587E7E1F46BEC00076084A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "Static Files/Constants.swift"; sourceTree = "<group>"; };
+		A5587E861F46BF7E0076084A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "CSVAssignment/View Controllers/MainViewController.swift"; sourceTree = "<group>"; };
+		A5587E881F46C0490076084A /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Controller.swift; path = Controller/Controller.swift; sourceTree = "<group>"; };
+		A7CF4F3C701764975EF81B17 /* Pods-CSVAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSVAssignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSVAssignment/Pods-CSVAssignment.debug.xcconfig"; sourceTree = "<group>"; };
+		F3C27DB8B6BF2BD0DDA69021 /* Pods_CSVAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSVAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6CC4751D35B1D937F83C2D /* Pods_CSVAssignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4613F201C0DA56D7BA151EDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7CF4F3C701764975EF81B17 /* Pods-CSVAssignment.debug.xcconfig */,
+				5F7ED70D2CFCC61FB1B71ED7 /* Pods-CSVAssignment.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6F14ED676C1B8BECB34998EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3C27DB8B6BF2BD0DDA69021 /* Pods_CSVAssignment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A5587E3D1F46BE3A0076084A = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +111,8 @@
 				A5587E601F46BE3C0076084A /* CSVAssignmentTests */,
 				A5587E6B1F46BE3C0076084A /* CSVAssignmentUITests */,
 				A5587E471F46BE3B0076084A /* Products */,
+				4613F201C0DA56D7BA151EDE /* Pods */,
+				6F14ED676C1B8BECB34998EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +129,11 @@
 		A5587E481F46BE3B0076084A /* CSVAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				A5587E7D1F46BEA40076084A /* Static Files */,
+				A5587E7A1F46BE520076084A /* Models */,
+				A5587E831F46BF1A0076084A /* View Controllers */,
+				A5587E801F46BEE80076084A /* Controller */,
 				A5587E491F46BE3B0076084A /* AppDelegate.swift */,
-				A5587E4B1F46BE3B0076084A /* ViewController.swift */,
 				A5587E4D1F46BE3B0076084A /* Main.storyboard */,
 				A5587E531F46BE3B0076084A /* Assets.xcassets */,
 				A5587E551F46BE3B0076084A /* LaunchScreen.storyboard */,
@@ -128,6 +161,39 @@
 			path = CSVAssignmentUITests;
 			sourceTree = "<group>";
 		};
+		A5587E7A1F46BE520076084A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A5587E7B1F46BE8F0076084A /* DataModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A5587E7D1F46BEA40076084A /* Static Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5587E7E1F46BEC00076084A /* Constants.swift */,
+			);
+			name = "Static Files";
+			sourceTree = "<group>";
+		};
+		A5587E801F46BEE80076084A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5587E881F46C0490076084A /* Controller.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A5587E831F46BF1A0076084A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5587E861F46BF7E0076084A /* MainViewController.swift */,
+			);
+			name = "View Controllers";
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5587E711F46BE3C0076084A /* Build configuration list for PBXNativeTarget "CSVAssignment" */;
 			buildPhases = (
+				67AA94E6A8FF801F40F70E54 /* [CP] Check Pods Manifest.lock */,
 				A5587E421F46BE3B0076084A /* Sources */,
 				A5587E431F46BE3B0076084A /* Frameworks */,
 				A5587E441F46BE3B0076084A /* Resources */,
+				D3BA2DB290385B92C732ABA9 /* [CP] Embed Pods Frameworks */,
+				FC13FA256EB8717D80633A54 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,14 +326,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		67AA94E6A8FF801F40F70E54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3BA2DB290385B92C732ABA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CSVAssignment/Pods-CSVAssignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC13FA256EB8717D80633A54 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CSVAssignment/Pods-CSVAssignment-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5587E421F46BE3B0076084A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5587E871F46BF7E0076084A /* MainViewController.swift in Sources */,
+				A5587E7F1F46BEC00076084A /* Constants.swift in Sources */,
 				A5587E521F46BE3B0076084A /* CSVAssignment.xcdatamodeld in Sources */,
-				A5587E4C1F46BE3B0076084A /* ViewController.swift in Sources */,
+				A5587E7C1F46BE8F0076084A /* DataModel.swift in Sources */,
 				A5587E4A1F46BE3B0076084A /* AppDelegate.swift in Sources */,
+				A5587E891F46C0490076084A /* Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +536,7 @@
 		};
 		A5587E721F46BE3C0076084A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7CF4F3C701764975EF81B17 /* Pods-CSVAssignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CSVAssignment/Info.plist;
@@ -428,6 +549,7 @@
 		};
 		A5587E731F46BE3C0076084A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F7ED70D2CFCC61FB1B71ED7 /* Pods-CSVAssignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CSVAssignment/Info.plist;
@@ -511,6 +633,7 @@
 				A5587E731F46BE3C0076084A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5587E741F46BE3C0076084A /* Build configuration list for PBXNativeTarget "CSVAssignmentTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +642,7 @@
 				A5587E761F46BE3C0076084A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5587E771F46BE3C0076084A /* Build configuration list for PBXNativeTarget "CSVAssignmentUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +651,7 @@
 				A5587E791F46BE3C0076084A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

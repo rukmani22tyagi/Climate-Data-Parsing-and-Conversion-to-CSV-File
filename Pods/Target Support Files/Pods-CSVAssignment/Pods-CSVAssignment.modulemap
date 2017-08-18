@@ -1,0 +1,6 @@
+framework module Pods_CSVAssignment {
+  umbrella header "Pods-CSVAssignment-umbrella.h"
+
+  export *
+  module * { export * }
+}
