@@ -8,8 +8,12 @@
 
 import Foundation
 
-typealias GetAllDataCompletion = ([String], [String], [String], [String], [String]) -> ()
+typealias GetDataCompletion = ([DataModel]) -> ()
 
 struct StaticURL {
     static let url = "https://www.metoffice.gov.uk/climate/uk/summaries/datasets#Yearorder"
 }
+
+
+
+

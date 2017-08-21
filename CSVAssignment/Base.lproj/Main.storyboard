@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CSVAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,74 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XQ7-Mb-9Zo">
+                                <rect key="frame" x="0.0" y="44" width="375" height="593"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="MNp-Za-NJk">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MNp-Za-NJk" id="75R-po-rFz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="L8T-yD-E5n"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="6M0-YM-pwG"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoW-Xu-cgz">
+                                <rect key="frame" x="16" y="312.5" width="343" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Download Data To Create CSV File and read the CSV File to display data" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aA4-zf-sZg">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.4167780532" green="0.78128710329999995" blue="0.92427926510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Uk-vG-v80">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
+                                        <connections>
+                                            <action selector="createCSVButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dyi-dN-nyW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aA4-zf-sZg" secondAttribute="trailing" id="DLD-dN-OQu"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Uk-vG-v80" secondAttribute="trailing" id="Etw-JE-t0J"/>
+                                    <constraint firstAttribute="bottom" secondItem="aA4-zf-sZg" secondAttribute="bottom" id="FrV-c8-lVU"/>
+                                    <constraint firstItem="aA4-zf-sZg" firstAttribute="leading" secondItem="PoW-Xu-cgz" secondAttribute="leading" id="IXT-Nx-yfo"/>
+                                    <constraint firstItem="2Uk-vG-v80" firstAttribute="height" secondItem="PoW-Xu-cgz" secondAttribute="height" id="Jb3-1g-zaY"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Uk-vG-v80" secondAttribute="bottom" id="KPM-Gs-ccr"/>
+                                    <constraint firstItem="aA4-zf-sZg" firstAttribute="top" secondItem="PoW-Xu-cgz" secondAttribute="top" id="cCG-Xl-e9C"/>
+                                    <constraint firstItem="2Uk-vG-v80" firstAttribute="top" secondItem="PoW-Xu-cgz" secondAttribute="top" id="cwn-Vh-KXE"/>
+                                    <constraint firstItem="2Uk-vG-v80" firstAttribute="leading" secondItem="PoW-Xu-cgz" secondAttribute="leading" id="jIZ-M1-IV9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PoW-Xu-cgz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CJj-Xh-Hpi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PoW-Xu-cgz" secondAttribute="trailing" id="QW2-UZ-20O"/>
+                            <constraint firstAttribute="trailing" secondItem="XQ7-Mb-9Zo" secondAttribute="trailing" id="T18-Nt-DXD"/>
+                            <constraint firstItem="XQ7-Mb-9Zo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fI1-Ck-MgF"/>
+                            <constraint firstItem="PoW-Xu-cgz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gPQ-oj-ePR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XQ7-Mb-9Zo" secondAttribute="bottom" constant="30" id="m8c-uz-F8g"/>
+                            <constraint firstItem="XQ7-Mb-9Zo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="sZm-qF-kK0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="initialView" destination="PoW-Xu-cgz" id="jOH-yk-Yq8"/>
+                        <outlet property="tableView" destination="XQ7-Mb-9Zo" id="cYf-7y-wGi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>

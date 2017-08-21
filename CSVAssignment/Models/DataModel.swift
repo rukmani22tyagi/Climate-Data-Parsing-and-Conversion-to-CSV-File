@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DictData {
+class DataModel {
     var regionCode: String
     var weatherParam: String
     var year: String

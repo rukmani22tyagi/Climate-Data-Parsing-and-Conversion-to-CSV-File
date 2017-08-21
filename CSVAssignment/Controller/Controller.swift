@@ -13,15 +13,17 @@ import SwiftSoup
 
 class Controller {
     
-    var maxTempTextLinks = [String]()
-    var minTempTextLinks = [String]()
-    var meanTempTextLinks = [String]()
-    var sunshineTextLinks = [String]()
-    var rainfallTextLinks = [String]()
+    var delegate: CompletionHandler?
+    private var maxTempTextLinks = [String]()
+    private var minTempTextLinks = [String]()
+    private var meanTempTextLinks = [String]()
+    private var sunshineTextLinks = [String]()
+    private var rainfallTextLinks = [String]()
     
-    var dictData = [DictData]()
+    private var links = [[String]]()
+    private var dictData = [DataModel]()
     
-    func getListOfTextFiles(completed: @escaping GetAllDataCompletion) {
+    public func getListOfTextFiles() {
         let url = StaticURL.url
         
         Alamofire.request(url).response { response in
@@ -51,53 +53,33 @@ class Controller {
                                     self.rainfallTextLinks.append(text)
                                 }
                             }
+
                         } catch {
+                            print("error: ", error.localizedDescription)
                         }
                     }
                 } catch {
+                    print("error: ", error.localizedDescription)
                 }
             } catch {
+                print("error: ", error.localizedDescription)
             }
-            completed(self.maxTempTextLinks, self.minTempTextLinks, self.meanTempTextLinks, self.sunshineTextLinks, self.rainfallTextLinks)
+            self.links = [self.maxTempTextLinks, self.minTempTextLinks, self.meanTempTextLinks, self.sunshineTextLinks, self.rainfallTextLinks]
+            self.delegate?.onGettingTextFileLinks(links: self.links)
         }
     }
     
-    func getDataOfTextFile(url: String) {
-        
+    public func getDataOfTextFile(url: String, weatherParam: String, completed: @escaping GetDataCompletion) {
         do {
             let textFileData = try NSString(contentsOf: URL(string: url)!, encoding: String.Encoding.utf8.rawValue)
             let lines = textFileData.components(separatedBy: "\n")
             
+            let regionCode = (lines[0].components(separatedBy: " ")).first
             var keys = [String]()
             var values = [String]()
-            
-            //            for index in 7..<lines.count-2 {
-            //                let line = lines[index] + " "
-            //                var word = ""
-            //
-            //                for ch in 0..<line.characters.count {
-            //                    if line[ch] != " " {
-            //                        word.append(line[ch])
-            //                    } else if word != "" {
-            //                        if index == 7 {
-            //                            keys.append(word)
-            //                        } else {
-            //                            values.append(word)
-            //                        }
-            //                        word = ""
-            //                    }
-            //                }
-            //                if index>7 {
-            //                    for i in 1..<keys.count {
-            //                        let dictClassElement = DictData(_regionCode: "", _weatherParam: "", _year: values[0], _key: keys[i], _value: values[i])
-            //                        self.dictData.append(dictClassElement)
-            //                    }
-            //                    values.removeAll()
-            //                }
-            //            }
-            
-            for index in 7..<lines.count {
-                let line = lines[index] + ""
+
+            for index in 7..<lines.count-1 {
+                let line = lines[index]
                 var word = ""
                 var spaceCount = 0
                 
@@ -107,7 +89,7 @@ class Controller {
                         spaceCount = 0
                     } else {
                         spaceCount += 1
-                        let emptyvalues = spaceCount/6
+                        let emptyvalues = spaceCount/7 //Assuming gap between two consecutive values
                         if emptyvalues > 0 {
                             spaceCount = 0
                             for _ in 1...emptyvalues {
@@ -133,22 +115,25 @@ class Controller {
                 }
                 
                 if index>7 {
+                    let diff = keys.count - values.count
+                    if diff > 0 {
+                        for _ in 1...diff {
+                            values.append("N/A")
+                        }
+                    }
                     for i in 1..<keys.count {
-                        let dictClassElement = DictData(_regionCode: "", _weatherParam: "", _year: values[0], _key: keys[i], _value: values[i])
+                        if values[i] == "---" {
+                            values[i] = "N/A"
+                        }
+                        let dictClassElement = DataModel(_regionCode: regionCode!, _weatherParam: weatherParam, _year: values[0], _key: keys[i], _value: values[i])
                         self.dictData.append(dictClassElement)
                     }
                     values.removeAll()
                 }
             }
-            
-            
         } catch {
+            print("error: ", error.localizedDescription)
         }
-    }
-}
-
-extension String {
-    subscript (i: Int) -> Character {
-        return self[index(startIndex, offsetBy: i)]
+        completed(self.dictData)
     }
 }
